@@ -12,7 +12,6 @@ namespace Telecomando.Mosconi
         private string produttore;
         private string modello;
         private string modFunc;
-        private bool stato=false;
         private Televisione televisione;
 
         //costruttori
@@ -33,11 +32,11 @@ namespace Telecomando.Mosconi
         //metodi
         public void accendi()
         {
-            stato = true;
+            televisione.setStato(true);
         }
         public void spegni()
         {
-            stato = false;
+            televisione.setStato(false);
         }
         public void aumentaVolume()
         {
@@ -60,10 +59,6 @@ namespace Telecomando.Mosconi
         public void setTelevisione(Televisione tv1)
         {
             televisione = tv1;
-        }
-        public bool getStato()
-        {
-            return stato;
         }
         public Televisione getTelevisione()
         {
