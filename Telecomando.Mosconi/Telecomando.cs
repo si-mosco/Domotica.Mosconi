@@ -35,15 +35,18 @@ namespace Telecomando.Mosconi
         }
         public void aumentaVolume()
         {
-            volume +=1;
+            if (volume <100)
+                volume +=1;
         }
         public void diminuisciVolume()
         {
-            volume -= 1;
+            if (volume>=1)
+                volume -= 1;
         }
         public void setCanale(int c1)
         {
-            canale = c1;
+            if (c1>0 && c1<999)
+                canale = c1;
         }
         public bool getStato()
         {

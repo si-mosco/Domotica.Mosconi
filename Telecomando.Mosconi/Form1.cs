@@ -13,11 +13,13 @@ namespace Telecomando.Mosconi
     public partial class Form1 : Form
     {
         private Telecomando t;
+        private Televisione c;
         public Form1()
         {
             InitializeComponent();
 
             t = new Telecomando("Sony", "Bravia", "Wi-Fi");
+            c = new Televisione("Sony", "Bravia");
         }
 
         private void Form1_Load(object sender, EventArgs e)
