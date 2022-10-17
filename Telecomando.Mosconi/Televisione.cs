@@ -48,10 +48,6 @@ namespace Telecomando.Mosconi
         {
             return produttore;
         }
-        public string[] getConnettori()
-        {
-            return connettori;
-        }
         public bool getStato()
         {
             return stato;
