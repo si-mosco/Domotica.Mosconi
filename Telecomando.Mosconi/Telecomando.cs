@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Telecomando.Mosconi
 {
-    internal class Telecomando
+    public class Telecomando
     {
         //attributi
         private string produttore;
         private string modello;
         private string modFunc;
         private bool stato=false;
-        private int volume=0;
-        private int canale=0;
+        private Televisione televisione;
 
         //costruttori
         public Telecomando(string Produttore, string Modello, string ModalitaFunzionamento)
@@ -22,6 +21,13 @@ namespace Telecomando.Mosconi
             produttore = Produttore;
             modello = Modello;
             modFunc = ModalitaFunzionamento;
+        }
+        public Telecomando(string Produttore, string Modello, string ModalitaFunzionamento, Televisione televisione1)
+        {
+            produttore = Produttore;
+            modello = Modello;
+            modFunc = ModalitaFunzionamento;
+            televisione = televisione1;
         }
 
         //metodi
@@ -35,31 +41,33 @@ namespace Telecomando.Mosconi
         }
         public void aumentaVolume()
         {
-            if (volume <100)
-                volume +=1;
+            if (televisione != null)
+                if (televisione.getVolume() <= 100)
+                    televisione.setVolume(televisione.getVolume()+1);
         }
         public void diminuisciVolume()
         {
-            if (volume>=1)
-                volume -= 1;
+            if (televisione != null)
+                if (televisione.getVolume() >= 1)
+                    televisione.setVolume(televisione.getVolume() - 1);
         }
         public void setCanale(int c1)
         {
-            if (c1>0 && c1<999)
-                canale = c1;
+            if (televisione != null)
+                if (c1 > 0 && c1 < 999)
+                    televisione.setCanale(c1);
+        }
+        public void setTelevisione(Televisione tv1)
+        {
+            televisione = tv1;
         }
         public bool getStato()
         {
             return stato;
         }
-        public int getVolume()
+        public Televisione getTelevisione()
         {
-            return volume;
+            return televisione;
         }
-        public int getCanale()
-        {
-            return canale;
-        }
-
     }
 }

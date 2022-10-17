@@ -12,14 +12,14 @@ namespace Telecomando.Mosconi
 {
     public partial class Form1 : Form
     {
-        private Telecomando t;
-        private Televisione c;
+        private Telecomando tec;
+        private Televisione tev;
         public Form1()
         {
             InitializeComponent();
 
-            t = new Telecomando("Sony", "Bravia", "Wi-Fi");
-            c = new Televisione("Sony", "Bravia");
+            tec = new Telecomando("Sony", "Bravia", "Wi-Fi");
+            tev = new Televisione("Sony", "Bravia", "Hdmi");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,10 +29,7 @@ namespace Telecomando.Mosconi
 
         private void button1_Click(object sender, EventArgs e) //accendi
         {
-            t.accendi();
-            button3.Visible = true;
-            button4.Visible = true;
-            button5.Visible = true;
+            tec.accendi();
             button6.Visible = true;
             button7.Visible = true;
             button8.Visible = true;
@@ -41,10 +38,7 @@ namespace Telecomando.Mosconi
 
         private void button2_Click(object sender, EventArgs e) //spegni
         {
-            t.spegni();
-            button3.Visible = false;
-            button4.Visible = false;
-            button5.Visible = false;
+            tec.spegni();
             button6.Visible = false;
             button7.Visible = false;
             button8.Visible = false;
@@ -53,29 +47,12 @@ namespace Telecomando.Mosconi
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{t.getStato()}");
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{t.getVolume()}");
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{t.getCanale()}");
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            t.aumentaVolume();
-            MessageBox.Show($"{t.getVolume()}");
+            MessageBox.Show($"{tec.getStato()}");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            t.diminuisciVolume();
-            MessageBox.Show($"{t.getVolume()}");
+            tec.diminuisciVolume();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -83,9 +60,8 @@ namespace Telecomando.Mosconi
             try
             {
                 int c1 = int.Parse(textBox1.Text);
-                t.setCanale(c1);
+                tec.setCanale(c1);
                 textBox1.Text = "";
-                MessageBox.Show($"{t.getCanale()}");
             }
             catch
             {

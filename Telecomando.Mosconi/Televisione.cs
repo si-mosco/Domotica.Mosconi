@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Telecomando.Mosconi
 {
-    internal class Televisione
+    public class Televisione
     {
         //attributi
         private string modello;
@@ -14,10 +14,11 @@ namespace Telecomando.Mosconi
         private string[] conettori;
         private bool stato;
         private int canale;
+        private int volume;
         private string risoluzione;
 
         //costruttori
-        public Televisione(string produttore1, string modello1)
+        public Televisione(string produttore1, string modello1, string connettori)
         {
             produttore = produttore1;
             modello = modello1;
@@ -40,6 +41,14 @@ namespace Telecomando.Mosconi
         {
             canale = n;
         }
+        public void setStato(bool n)
+        {
+            stato = n;
+        }
+        public void setVolume(int n)
+        {
+            volume = n;
+        }
         public string getModello()
         {
             return modello;
@@ -55,6 +64,10 @@ namespace Telecomando.Mosconi
         public int getCanale()
         {
             return canale;
+        }
+        public int getVolume()
+        {
+            return volume;
         }
         public string getRisoluzione()
         {
