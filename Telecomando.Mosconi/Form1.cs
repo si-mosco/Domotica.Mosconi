@@ -14,6 +14,7 @@ namespace Telecomando.Mosconi
     {
         private Telecomando tec;
         private Televisione tev;
+        private Termostato ter;
         public Form1()
         {
             InitializeComponent();
@@ -90,9 +91,6 @@ namespace Telecomando.Mosconi
         private void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{tev.getCanale()}");
-
-
-            tec.setTelevisione(tev);
         }
 
         private void button6_Click_1(object sender, EventArgs e)
