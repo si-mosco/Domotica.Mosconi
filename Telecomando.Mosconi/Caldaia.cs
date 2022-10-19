@@ -6,36 +6,41 @@ using System.Threading.Tasks;
 
 namespace Telecomando.Mosconi
 {
-    public class Termostato
+    public class Caldaia
     {
         //attributi
+        private bool stato;
+        private double temperatura;
         private string modello;
         private string produttore;
+        private string data;
         private int ndiserie;
-        private Caldaia caldaia;
 
         //costruttori
-        public Termostato(string Modello, string Produttore, int NumDiSerie, Caldaia caldaia1)
+        public Caldaia(string Modello, string Produttore, string Data, int NumDiSerie)
         {
             modello = Modello;
             produttore = Produttore;
+            data = Data;
             ndiserie = NumDiSerie;
-            caldaia = caldaia1;
         }
 
         //metodi
-        public void accendi()
+        public void setStato(bool Stato)
         {
-            caldaia.setStato(true);
+            stato = Stato;
         }
-        public void spegni()
+        public void setTemperatura(double Temperatura)
         {
-            caldaia.setStato(false);
+            temperatura = Temperatura;
         }
-        public void setTemperatura()
+        public bool getStato()
         {
-            //prendere il valore ...
-            caldaia.setTemperatura(3);
+            return stato;
+        }
+        public double getTemperatura()
+        {
+            return temperatura;
         }
         public string getModello()
         {
@@ -44,6 +49,10 @@ namespace Telecomando.Mosconi
         public string getProduttore()
         {
             return produttore;
+        }
+        public string getData()
+        {
+            return data;
         }
         public int getNdiserie()
         {

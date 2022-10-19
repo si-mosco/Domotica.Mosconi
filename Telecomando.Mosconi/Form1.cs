@@ -15,12 +15,15 @@ namespace Telecomando.Mosconi
         private Telecomando tec;
         private Televisione tev;
         private Termostato ter;
+        private Caldaia cal;
         public Form1()
         {
             InitializeComponent();
 
             tev = new Televisione("Sony", "Bravia", "Hdmi", "1");
             tec = new Telecomando("Sony", "Bravia", "Wi-Fi", tev, "1");
+            cal = new Caldaia("Class One", "Ariston", "chenneso", 177013);
+            ter = new Termostato("Class Two", "Ariston", 366547, cal);
         }
 
         private void Form1_Load(object sender, EventArgs e)
