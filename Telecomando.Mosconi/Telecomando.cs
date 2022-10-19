@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Telecomando.Mosconi
 {
@@ -13,6 +14,7 @@ namespace Telecomando.Mosconi
         private string modello;
         private string modFunc;
         private Televisione televisione;
+        public string id;
 
         //costruttori
         public Telecomando(string Produttore, string Modello, string ModalitaFunzionamento)
@@ -21,12 +23,13 @@ namespace Telecomando.Mosconi
             modello = Modello;
             modFunc = ModalitaFunzionamento;
         }
-        public Telecomando(string Produttore, string Modello, string ModalitaFunzionamento, Televisione televisione1)
+        public Telecomando(string Produttore, string Modello, string ModalitaFunzionamento, Televisione televisione1, string Id)
         {
             produttore = Produttore;
             modello = Modello;
             modFunc = ModalitaFunzionamento;
             televisione = televisione1;
+            id = Id;
         }
 
         //metodi
@@ -42,7 +45,7 @@ namespace Telecomando.Mosconi
         {
             if (televisione != null)
                 if (televisione.getVolume() <= 100)
-                    televisione.setVolume(televisione.getVolume()+1);
+                    televisione.setVolume(televisione.getVolume() + 1);
         }
         public void diminuisciVolume()
         {
@@ -63,6 +66,11 @@ namespace Telecomando.Mosconi
         public Televisione getTelevisione()
         {
             return televisione;
+        }
+
+        public string getId()
+        {
+            return id;
         }
     }
 }

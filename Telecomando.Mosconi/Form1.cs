@@ -18,8 +18,8 @@ namespace Telecomando.Mosconi
         {
             InitializeComponent();
 
-            tec = new Telecomando("Sony", "Bravia", "Wi-Fi");
-            tev = new Televisione("Sony", "Bravia", "Hdmi");
+            tev = new Televisione("Sony", "Bravia", "Hdmi", "1");
+            tec = new Telecomando("Sony", "Bravia", "Wi-Fi", tev, "1");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,7 +60,6 @@ namespace Telecomando.Mosconi
         private void button7_Click(object sender, EventArgs e)
         {
             tec.diminuisciVolume();
-            MessageBox.Show($"{tev.getVolume()}");
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -94,6 +93,11 @@ namespace Telecomando.Mosconi
 
 
             tec.setTelevisione(tev);
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            tec.aumentaVolume();
         }
     }
 }

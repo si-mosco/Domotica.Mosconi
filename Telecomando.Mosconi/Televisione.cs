@@ -16,12 +16,14 @@ namespace Telecomando.Mosconi
         private int canale;
         private int volume;
         private string risoluzione;
+        public string id;
 
         //costruttori
-        public Televisione(string produttore1, string modello1, string connettori)
+        public Televisione(string produttore1, string modello1, string connettori, string id1)
         {
             produttore = produttore1;
             modello = modello1;
+            id = id1;
         }
         public Televisione(string modello1)
         {
@@ -72,6 +74,10 @@ namespace Telecomando.Mosconi
         public string getRisoluzione()
         {
             return risoluzione;
+        }
+        public string getId()
+        {
+            return id;
         }
     }
 }
